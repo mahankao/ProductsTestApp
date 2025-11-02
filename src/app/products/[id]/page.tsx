@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useProductsStore } from "@/store/productsStore";
-import { Heart, Trash2 } from "lucide-react";
+import {Heart, Pencil, Trash} from "lucide-react";
 
 export default function ProductPage() {
     const router = useRouter();
@@ -64,13 +64,17 @@ export default function ProductPage() {
                             </button>
 
                             <button
-                                onClick={() => {
-                                    deleteProduct(product.id);
-                                    router.push("/products");
+                                onClick={(e) => {router.push(`/products/edit/${product.id}`)
                                 }}
-                                className="p-2 rounded bg-gray-200 hover:bg-gray-300 transition"
-                            >
-                                Удалить
+                                className="px-1 py-1 rounded bg-gray-200 hover:bg-gray-400 transition">
+
+                                <Pencil className="w-8 h-6 stroke-gray-500"></Pencil>
+                            </button>
+
+                            <button
+                                onClick={(e) => {deleteProduct(product.id); }}
+                                className="px-1 py-1 rounded bg-gray-200 hover:bg-gray-400 transition" >
+                                <Trash className="w-8 h-6 stroke-gray-500"></Trash>
                             </button>
                         </div>
                     </div>

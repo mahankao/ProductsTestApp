@@ -62,7 +62,7 @@ export default function EditProductPage() {
                 Назад
             </button>
 
-            <h1 className="text-3xl font-bold mb-6">Редактирование продукта</h1>
+            <h1 className="text-3xl font-bold mb-6">Редактирование товара</h1>
 
             {error && <p className="mb-4 text-red-500 font-medium">{error}</p>}
 
